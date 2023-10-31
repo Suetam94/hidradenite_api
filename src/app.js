@@ -1,5 +1,5 @@
 const express = require('express')
-const routes = require('./Routes')
+const routes = require('./routes')
 const errorHandler = require('./helpers/errorHandler')
 
 const app = express()

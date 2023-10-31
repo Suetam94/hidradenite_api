@@ -1,5 +1,5 @@
 const { PrismaClient } = require('@prisma/client')
-const CreateUseCase = require('../../../UseCases/Articles/create')
+const CreateUseCase = require('../../../useCases/articles/create')
 const CreateController = require('./controller')
 const schema = require('./schema')
 
