@@ -16,3 +16,10 @@ model Articles {
   url      String
   category String
 }
+
+model Gallery {
+  id          Int     @id @default(autoincrement())
+  title       String
+  media       Bytes
+  description String?
+}
