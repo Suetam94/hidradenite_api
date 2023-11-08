@@ -23,3 +23,28 @@ model Gallery {
   media       Bytes
   description String?
 }
+
+model Components {
+  id             Int              @id @default(autoincrement())
+  component      String
+  componentText  ComponentText[]
+  componentMedia ComponentMedia[]
+}
+
+model ComponentText {
+  id          Int        @id @default(autoincrement())
+  text        String
+  identifier  String?
+  component   Components @relation(fields: [componentId], references: [id])
+  componentId Int
+}
+
+model ComponentMedia {
+  id          Int        @id @default(autoincrement())
+  title       String
+  media       Bytes
+  description String?
+  identifier  String?
+  component   Components @relation(fields: [componentId], references: [id])
+  componentId Int
+}
