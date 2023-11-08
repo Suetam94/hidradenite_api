@@ -4,7 +4,7 @@ class UpdateUseCase {
   }
 
   exec = async (id, data) => {
-    const component = await this.prisma.componentText.update({
+    const componentText = await this.prisma.componentText.update({
       where: {
         id
       },
@@ -13,7 +13,7 @@ class UpdateUseCase {
 
     return {
       message: 'Component text was updated successfully.',
-      component
+      componentText
     }
   }
 }

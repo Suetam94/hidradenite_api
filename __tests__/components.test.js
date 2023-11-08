@@ -10,6 +10,7 @@ const insertedComponent = {
 }
 
 beforeAll(async () => {
+  await prisma.$executeRawUnsafe('DELETE FROM COMPONENTTEXT;')
   await prisma.$executeRawUnsafe('DELETE FROM COMPONENTS;')
   await prisma.$executeRawUnsafe(`INSERT INTO COMPONENTS VALUES ('1','footer');`)
 })
