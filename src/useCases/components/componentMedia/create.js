@@ -6,13 +6,14 @@ class CreateUseCase {
 
   exec = async (data) => {
     const files = fs.readdirSync('./tmp')
+    delete data.files
+
     for (const file of files) {
       const openedFile = fs.readFileSync(`./tmp/${file}`)
       await this.prisma.componentMedia.create({
         data: {
-          title: data.title,
-          media: openedFile,
-          description: data.description ?? null
+          ...data,
+          media: openedFile
         }
       })
       fs.unlinkSync(`./tmp/${file}`)
