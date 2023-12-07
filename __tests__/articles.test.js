@@ -6,7 +6,7 @@ let prisma = new PrismaClient()
 
 beforeAll(async () => {
   await prisma.$executeRawUnsafe('DELETE FROM ARTICLES;')
-  await prisma.$executeRawUnsafe(`INSERT INTO ARTICLES VALUES ('10000','test_test', 'https://www.google.com', 'patient');`)
+  await prisma.$executeRawUnsafe(`INSERT INTO ARTICLES VALUES ('10000','test_test', 'https://www.google.com', 'patient', null);`)
 })
 
 function getSnippet(response) {
